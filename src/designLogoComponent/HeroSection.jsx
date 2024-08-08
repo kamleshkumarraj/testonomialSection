@@ -11,8 +11,8 @@ function HeroSection() {
             </div>
             
         </div>
-        <div id="img-section" className='2xl:py-[30px] lg:py-[20px] md:py-[18px] py-[15px] px-[20px] self-center mx-auto'>
-            <img src={hero_image} alt="" />
+        <div id="img-section" className='2xl:py-[30px] lg:py-[20px] md:py-[18px] py-[15px] px-[20px] self-center mx-auto w-full'>
+            <img className='w-[80%]' src={hero_image} alt="" />
         </div>
     </main>
   )

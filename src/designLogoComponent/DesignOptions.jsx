@@ -5,9 +5,12 @@ import logo_3 from '../assets/DesignAndLogoImg/logo-img-3.svg'
 import logo_4 from '../assets/DesignAndLogoImg/logo-img-4.svg'
 import logo_5 from '../assets/DesignAndLogoImg/logo-img-5.svg'
 import logo_6 from '../assets/DesignAndLogoImg/logo-img-6.svg'
+
 function DesignOptions() {
     const imgArr = [logo_1, logo_2, logo_3, logo_4 , logo_5, logo_6]
     const labelArr = ['folded leaflet design' , 'letterhead design' , 'postcard design' , 'rectangle banner design' , 'return label address design' , 'wedding invitation design']
+    
+
   return (
     <div id="design-option-section" className="mt-[60px] w-full 2xl:px-[40px] xl:px-[30px] px-[20px]" >
         <header id="heading" className="flex flex-wrap items-center justify-between gap-[20px]">
@@ -16,6 +19,7 @@ function DesignOptions() {
             <h5 className="font-[poppins] font-[500] 2xl:leading-[22.2px] lg:tracking-[15px] 2xl:tracking-[2.96px] lg:text-[12px] sm:text-[11px] text-[10px] lg:leading-[17px] sm:leading-[14px] leading-[12px] 2xl:text-[14.8px] tracking-[1px] ">see all design options </h5>
             <MdOutlineArrowRightAlt size={'14.8px'}/>
             </div>
+            
         </header>
         <div id="design-section" className="grid 2xl:grid-cols-6 gap-[60px] mt-[50px] xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
             {
