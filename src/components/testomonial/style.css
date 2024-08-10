@@ -40,3 +40,7 @@
     place-items : center;
     /* left: 5rem; */
 }
+
+#size{
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
