@@ -1,33 +1,53 @@
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom";
 
 function MyOrder() {
-  const navHandler = (status) =>{
-    if(status) return 'bg-[#0000002c] border-b-[2px] border-[black] px-[20px] py-[1px] rounded-[5px]'
-  }
-  return (
-    <div id="my-order" className="w-full md:col-start-2 md:col-end-4">
-      <h1 className="font-[DM Sans] font-[700] text-left 2xl:text-[37.18px] xl:text-[35px] lg:text-[33px] md:text-[30px] sm:text-[28px] text-[25px] 2xl:leading-[44.49px] pb-[10px] xl:leading-[40px] lg:leading-[36px] md:leading-[32px] sm:leading-[28px] leading-[25px] 2xl:tracking-[2.1px] xl:tracking-[1.8px] lg:tracking-[1.6px] md:tracking-[1.4px] sm:tracking-[1.2px] tracking-[1px] ">My Orders</h1>
+  const navHandler = (status) => {
+    return status
+      ? "bg-gradient-to-r from-purple-500 to-indigo-600 text-white border-b-2 border-purple-600 px-5 py-2 rounded-t-md transition duration-300 ease-in-out"
+      : "text-gray-600 hover:text-purple-600 px-5 py-2 transition duration-300 ease-in-out";
+  };
 
-      <div id="order-header" className="flex sm:flex-row flex-col justify-around w-full mt-[30px] border-b-[.5px] border-[#0000001a]">
-          <NavLink to={'/my-orders/active'} className={(status) => 
-            navHandler(status.isActive)
-            }>
-            <p className="font-[DM Sans] font-[700] 2xl:leading-[44.49px] pb-[10px] xl:leading-[40px] lg:leading-[36px] md:leading-[32px] sm:leading-[28px] leading-[25px] 2xl:tracking-[2.1px] xl:tracking-[1.8px] lg:tracking-[1.6px] md:tracking-[1.4px] sm:tracking-[1.2px] tracking-[1px] 2xl:text-[29.22px] xl:text-[27px] lg:text-[25px] md:text-[23px] sm:text-[20px] text-[18px]">Active</p>
-          </NavLink>
-          <NavLink to={'/my-orders/canclled'} className={(status) => 
-            navHandler(status.isActive)
-          } >
-            <p className="font-[DM Sans] font-[700] 2xl:leading-[44.49px] pb-[10px] xl:leading-[40px] lg:leading-[36px] md:leading-[32px] sm:leading-[28px] leading-[25px] 2xl:tracking-[2.1px] xl:tracking-[1.8px] lg:tracking-[1.6px] md:tracking-[1.4px] sm:tracking-[1.2px] tracking-[1px] 2xl:text-[29.22px] xl:text-[27px] lg:text-[25px] md:text-[23px] sm:text-[20px] text-[18px]">Canclled</p>
-          </NavLink>
-          <NavLink className={(status) => navHandler(status.isActive)} to={'/my-orders/completed'}>
-            <p className="font-[DM Sans] font-[700] 2xl:leading-[44.49px] pb-[10px] xl:leading-[40px] lg:leading-[36px] md:leading-[32px] sm:leading-[28px] leading-[25px] 2xl:tracking-[2.1px] xl:tracking-[1.8px] lg:tracking-[1.6px] md:tracking-[1.4px] sm:tracking-[1.2px] tracking-[1px] 2xl:text-[29.22px] xl:text-[27px] lg:text-[25px] md:text-[23px] sm:text-[20px] text-[18px]">Completed</p>
-          </NavLink>
-          
+  return (
+    <div id="my-order" className="w-full md:col-start-2 md:col-end-4 p-6 bg-white rounded-lg shadow-lg">
+      <h1 className="font-poppins font-extrabold text-left text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-snug text-gray-900 mb-6">
+        My Orders
+      </h1>
+
+      <div
+        id="order-header"
+        className="flex justify-between items-center border-b-2 border-gray-300 mb-8"
+      >
+        <NavLink
+          to={"/my-orders/active"}
+          className={({ isActive }) => navHandler(isActive)}
+        >
+          <p className="font-poppins font-semibold text-lg lg:text-xl xl:text-2xl">
+            Active
+          </p>
+        </NavLink>
+        <NavLink
+          to={"/my-orders/canceledOrder"}
+          className={({ isActive }) => navHandler(isActive)}
+        >
+          <p className="font-poppins font-semibold text-lg lg:text-xl xl:text-2xl">
+            Canceled
+          </p>
+        </NavLink>
+        <NavLink
+          to={"/my-orders/completed"}
+          className={({ isActive }) => navHandler(isActive)}
+        >
+          <p className="font-poppins font-semibold text-lg lg:text-xl xl:text-2xl">
+            Completed
+          </p>
+        </NavLink>
       </div>
-      <Outlet />
-      
+
+      <div className="mt-8">
+        <Outlet />
+      </div>
     </div>
-  )
+  );
 }
 
-export default MyOrder
+export default MyOrder;

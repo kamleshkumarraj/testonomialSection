@@ -6,7 +6,7 @@ import EmptyWishlist from './pages/EmptyWishlist.jsx'
 import OrderDetails from './components/OrderDetails.jsx/OrderDetails.jsx'
 import MyOrder from './components/MyOrder/MyOrder.jsx'
 import ActiveOrder from './components/MyOrder/ActiveOrder.jsx'
-import CanclledOrder from './components/MyOrder/CanclledOrder.jsx'
+import CanceledOrder from './components/MyOrder/CanceledOrder.jsx'
 import CompletedOrder from './components/MyOrder/CompletedOrder.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 
@@ -31,8 +31,8 @@ const router = createBrowserRouter([{
       element : <ActiveOrder />
     },
     {
-      path : '/my-orders/canclled',
-      element : <CanclledOrder />
+      path : '/my-orders/canceledOrder',
+      element : <CanceledOrder />
     },
     {
       path : '/my-orders/completed',
